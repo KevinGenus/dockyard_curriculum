@@ -56,9 +56,9 @@ $ mix phx.new random_number --no-ecto
 
 Create a Phoenix application with three pages:
 
-- Home
-- About
-- Projects
+* Home
+* About
+* Projects
 
 Create a simple navigation bar at the top of every page that lets you navigate to each page.
 

@@ -67,7 +67,7 @@ total = 42
 Enter your solution below.
 
 ```elixir
-
+(7 / 10) * 100
 ```
 
 ## Rocket Ship
@@ -93,7 +93,9 @@ mass * acceleration
 Enter your solution below.
 
 ```elixir
-
+mass = 10
+acceleration = 50
+force = mass * acceleration
 ```
 
 ## What Do You Tip?
@@ -117,7 +119,9 @@ initial_cost * tip_percent
 Enter your solution below.
 
 ```elixir
-
+meal = 20
+tip = 20 * 0.15
+cost = meal + tip
 ```
 
 ## Pythagorean Theorum
@@ -141,7 +145,9 @@ a ** 2 + b ** 2
 Enter your solution below.
 
 ```elixir
-
+a = 4 ** 2
+b = 10 ** 2
+c = a + b
 ```
 
 ## Bonus: Square Root
@@ -161,7 +167,8 @@ c_squared = 116
 Enter your solution below.
 
 ```elixir
-
+c = 116
+:math.sqrt(c)
 ```
 
 ## Commit Your Progress

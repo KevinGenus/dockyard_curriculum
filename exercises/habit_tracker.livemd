@@ -36,9 +36,9 @@ You are going to build some logic for a habit tracking app. Habit tracking apps 
 
 Each habit is assigned a size such as small, medium, or large. Each size is assigned a different point value. Users earn points based on the habits they complete.
 
-* A large habit is worth 30 points
-* A medium habit is worth 20 points
-* A small habit is worth 5 points.
+- A large habit is worth 30 points
+- A medium habit is worth 20 points
+- A small habit is worth 5 points.
 
 ```mermaid
 flowchart
@@ -135,10 +135,9 @@ goal = 40
 
 Or you might consider binding `points` as a variable.
 
-
 ```elixir
 goal = 40
-points = small + medium 
+points = small + medium
 (points / goal) * 100
 ```
 
@@ -158,9 +157,9 @@ To motivate users to complete their habits quickly, we add a time-limit feature 
 
 Determine the users total point score when they complete:
 
-* three early small habits
-* two normal medium habits
-* two late large habits
+- three early small habits
+- two normal medium habits
+- two late large habits
 
 <details style="background-color: lightgreen; padding: 1rem;">
 <summary>Example solution</summary>
@@ -194,7 +193,7 @@ how it would affect calculating the total score and/or the total percentage of c
 New Feature: Penalty for failing to complete a habit is loss of those habits points
 
 ```elixir
-# You complete 1 large habbit, but fail to complete 3 medium habbits.
+# You complete 1 large habit, but fail to complete 3 medium habits.
 large + (medium * 3 * -1)
 ```
 

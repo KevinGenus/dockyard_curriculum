@@ -306,7 +306,25 @@ at least a 5 * 5 in width and height.
 Enter your solution below.
 
 ```elixir
-
+maze = %{
+  "south" => %{
+    "west" => %{
+      "south" => %{
+        "west" => %{
+          "south" => %{
+            "south" => %{
+              "south" => %{
+                "east" => %{
+                  "east" => "Exit!"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 ## Commit Your Progress

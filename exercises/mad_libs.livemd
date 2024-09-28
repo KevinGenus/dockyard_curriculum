@@ -56,7 +56,10 @@ blank3 = "code"
 Enter your solution below.
 
 ```elixir
-
+a = "dog"
+b = "cats"
+c = "fish"
+"A programmer is a " <> a <> " that turns " <> b <> " into " <> c <> "."
 ```
 
 ## String Interpolation Madlib
@@ -81,7 +84,10 @@ blank3 = "foobar"
 Enter your solution below.
 
 ```elixir
-
+a = "Fish"
+b = "Cows"
+c = "Surf 'n Turf'"
+a <> " and " <> b <> " combined makes " <> c <> "."
 ```
 
 ## Commit Your Progress

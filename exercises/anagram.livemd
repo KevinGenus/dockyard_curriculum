@@ -83,6 +83,7 @@ defmodule Anagram do
     true
   """
   def anagram?(word, possible_anagram) do
+    sort(word) === sort(possible_anagram)
   end
 
   @doc """
@@ -100,6 +101,14 @@ defmodule Anagram do
     []
   """
   def filter_anagrams(word_list, anagram) do
+    Enum.filter(word_list, &anagram?(&1, anagram))
+  end
+
+  defp sort(string) do
+    String.downcase(string)
+    |> String.graphemes
+    |> Enum.sort()
+    |> Enum.join()
   end
 end
 ```
@@ -129,6 +138,15 @@ defmodule AnagramSolver do
     ["abc", "acb", "bac", "bca", "cab", "cba"]
   """
   def solve(string) do
+    String.downcase(string)
+    |> String.graphemes()
+    |> Enum.sort()
+    |> Enum.join("")
+    |> IO.inspect()
+
+    
+  
+    
   end
 end
 ```

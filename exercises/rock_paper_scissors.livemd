@@ -66,7 +66,14 @@ Then, return the winning choice of either `:rock`, `:paper`, or `:scissors` that
 Enter your solution below.
 
 ```elixir
-
+player_choice = Enum.random([:rock, :paper, :scissors])
+computer_choice = 
+  case player_choice do
+    :rock -> :paper
+    :paper -> :scissors
+    :scissors -> :rock
+  end
+IO.puts("You played #{player_choice}, I played #{computer_choice}.\nI win!")
 ```
 
 ## Create Two Player Rock Paper Scissors
@@ -119,7 +126,25 @@ Bind a `player1_choice` and `player2_choice` variable to `:rock`, `:paper`, or `
 Enter your solution below.
 
 ```elixir
+player1 = Enum.random([:rock, :paper, :scissors])
+player2 = Enum.random([:rock, :paper, :scissors])
 
+check_win = fn p1, p2 -> 
+  case {p1, p2} do
+    {:rock, :scissors} -> true
+    {:scissors, :paper} -> true
+    {:paper, :rock} -> true
+    _ -> false
+  end
+end
+
+atos = &Atom.to_string(&1) |> String.capitalize
+
+cond do
+  check_win.(player1, player2) == true -> "#{atos.(player1)} beats #{player2}. Player 1 Wins!"
+  check_win.(player2, player1) == true -> "#{atos.(player2)} beats #{player1}. Player 2 Wins!"
+  true -> "#{atos.(player1)} times 2! It's a tie."
+end
 ```
 
 ## Commit Your Progress

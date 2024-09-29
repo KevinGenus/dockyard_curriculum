@@ -133,7 +133,7 @@ In the Elixir cell below, use [Enum.to_list/1](https://hexdocs.pm/elixir/Enum.ht
 </details>
 
 ```elixir
-
+Enum.to_list(3..9//3)
 ```
 
 ### Pattern Matching With Ranges
@@ -149,7 +149,7 @@ For the most strict match, the left and right side must be exactly equal.
 We can also bind the start and end of the range to a variable in our pattern match.
 
 ```elixir
-start..finish = 1..10
+start..finish//_step = 1..10
 ```
 
 ```elixir

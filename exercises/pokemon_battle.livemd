@@ -125,9 +125,24 @@ defmodule Pokemon do
       iex> Pokemon.attack(attacker, defender)
       %Pokemon{name: "Bulbasaur", type: :grass, health: 10.0, attack: 5, speed: 20}
   """
-  defstruct []
+  
+  defstruct [:name, :attack, :health, :speed, :type]
 
   def attack(attacker, defender) do
+    dmg = attacker.attack * modifier(attacker.type, defender.type)
+    %__MODULE__{defender | health: defender.health - dmg}
+  end
+
+  defp modifier(attacker, defender) do
+    cond do
+      strong_attack?(attacker, defender) -> 2
+      strong_attack?(defender, attacker) -> 0.5
+      true -> 1
+    end
+  end
+
+  defp strong_attack?(attacker, defender) do
+    {attacker, defender} in [{:fire, :grass}, {:grass, :water}, {:water, :fire}]
   end
 end
 ```
@@ -135,6 +150,12 @@ end
 Consider using the following Elixir cell to test your solution.
 
 ```elixir
+charmander = %Pokemon{name: "Charmander", type: :fire, health: 20.0, attack: 5, speed: 20}
+bulbasaur = %Pokemon{name: "Bulbasaur", type: :grass, health: 20.0, attack: 5, speed: 20}
+squirtle = %Pokemon{name: "Squirtle", type: :water, health: 20.0, attack: 5, speed: 20}
+bulbasaur = Pokemon.attack(squirtle, bulbasaur)
+squirtle = Pokemon.attack(bulbasaur, squirtle)
+squirtle = Pokemon.attack(bulbasaur, squirtle)
 
 ```
 
@@ -186,7 +207,9 @@ Pokemon.attack(charmander, bulbasaur)
 Enter your solution below.
 
 ```elixir
-
+charmander = %Pokemon{name: "Charmander", type: :fire, health: 20.0, attack: 5, speed: 20}
+bulbasaur = %Pokemon{name: "Bulbasaur", type: :grass, health: 20.0, attack: 5, speed: 20}
+squirtle = %Pokemon{name: "Squirtle", type: :water, health: 20.0, attack: 5, speed: 20}
 ```
 
 ## Commit Your Progress

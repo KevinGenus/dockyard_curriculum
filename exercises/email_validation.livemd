@@ -105,6 +105,8 @@ defmodule Email do
     false
   """
   def valid?(email) do
+    pattern = ~r/([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+/i
+    Regex.match?(pattern, email)
   end
 end
 ```

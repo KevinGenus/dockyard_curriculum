@@ -361,7 +361,9 @@ end)
 </details>
 
 ```elixir
-
+Regex.replace(~r/(\d{3})-\d{3}-\d{4}/, "999-999-9999", fn _a, b ->
+  "#{b}-XXX-XXXX"
+end)
 ```
 
 ## Options
@@ -463,7 +465,10 @@ end)
 </details>
 
 ```elixir
-
+text = "#9999999999"
+Regex.replace(~r/#(\d{3})(\d{3})(\d{4})/, text, fn _complete, g1, g2, g3 -> 
+  "#{g1}-#{g2}-#{g3}"
+end)
 ```
 
 ## Further Reading
